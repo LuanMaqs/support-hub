@@ -1,0 +1,9 @@
+node_modules
+.sfdx
+.sf
+.localdevserver
+*.log
+.env
+.vscode/*
+!.vscode/extensions.json
+.DS_Store

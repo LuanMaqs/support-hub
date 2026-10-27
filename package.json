@@ -1,0 +1,15 @@
+{
+  "name": "support-hub",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Nimbus Support Hub: Service Cloud case management with SLA tracking",
+  "scripts": {
+    "prettier": "prettier --write \"**/*.{cls,trigger,js,json,md,xml,yml}\"",
+    "prettier:verify": "prettier --check \"**/*.{cls,trigger,js,json,md,xml,yml}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-apex": "^2.2.6",
+    "@prettier/plugin-xml": "^3.4.1"
+  }
+}

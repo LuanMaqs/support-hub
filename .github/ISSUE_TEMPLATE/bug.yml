@@ -1,0 +1,20 @@
+name: Bug report
+description: Something behaves differently from the acceptance criteria
+labels: [bug]
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual behavior
+    validations: { required: true }
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options: [S1 - Outage, S2 - Major, S3 - Minor, S4 - Cosmetic]
+    validations: { required: true }

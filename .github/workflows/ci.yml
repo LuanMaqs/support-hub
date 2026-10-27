@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  sanity:
+    name: Project sanity checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON config files
+        run: |
+          for f in sfdx-project.json config/project-scratch-def.json package.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "ok $f"
+          done
+      - name: Block committed secrets and auth files
+        run: |
+          if git ls-files | grep -Ei '(^|/)\.env$|authfile|sfdx-auth|\.pem$'; then
+            echo "Sensitive file committed"; exit 1
+          fi
+
+  # Added in SUP-017, once a Dev Hub auth secret (SFDX_AUTH_URL) is configured:
+  #   - validate deploy to a scratch org
+  #   - run Apex tests with coverage gate
+  #   - prettier and PMD static analysis
