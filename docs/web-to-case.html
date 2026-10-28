@@ -1,0 +1,56 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<form action="YOUR_ORG" method="POST">
+
+<input type=hidden name='captcha_settings' value='{"keyname":"teste","fallback":"true","orgId":"00Diz000002gdBv","ts":""}'>
+<input type=hidden name="orgid" value="00Diz000002gdBv">
+<input type=hidden name="retURL" value="http://">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="lm7007fernandes@gmail.com">                                      -->
+<!--  ----------------------------------------------------------------------  -->
+
+<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+
+<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+
+<label for="description">Description</label><textarea name="description"></textarea><br>
+
+Category:<select  id="00Niz000004ofvJ" name="00Niz000004ofvJ" title="Category"><option value="">--None--</option><option value="Billing">Billing</option>
+<option value="Technial">Technial</option>
+<option value="Account Access">Account Access</option>
+<option value="Feature Request">Feature Request</option>
+</select><br>
+
+Severty:<select  id="00Niz000004ofvP" name="00Niz000004ofvP" title="Severty"><option value="">--None--</option><option value="S1 Crittical">S1 Crittical</option>
+<option value="S2 High">S2 High</option>
+<option value="S3 Medium">S3 Medium</option>
+<option value="S4 Low">S4 Low</option>
+</select><br>
+
+<div class="g-recaptcha" data-sitekey="6LcpsAUuAAAAAOlpGtjMs8FORnPrFxLYuevLH5Xa"></div><br>
+<input type="submit" name="submit">
+
+</form>

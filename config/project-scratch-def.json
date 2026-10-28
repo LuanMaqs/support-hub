@@ -1,9 +1,15 @@
 {
   "orgName": "Nimbus Support Hub",
   "edition": "Developer",
-  "features": ["ServiceCloud", "EnableSetPasswordInApi"],
+  "features": [
+    "ServiceCloud",
+    "ServiceUser",
+    "LightningServiceConsole",
+    "EnableSetPasswordInApi"
+  ],
   "settings": {
-    "lightningExperienceSettings": { "enableS1DesktopEnabled": true },
-    "caseSettings": { "systemUserEmail": "support@example.com", "enableEmailToCase": true }
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    }
   }
 }
